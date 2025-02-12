@@ -9,6 +9,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import {MatMenuModule, MatMenuTrigger} from "@angular/material/menu";
 import {RouterLink} from "@angular/router";
+import { AgendarPasseioComponent } from '../usuario/agendar-passeio/agendar-passeio.component';
 
 
 @NgModule({

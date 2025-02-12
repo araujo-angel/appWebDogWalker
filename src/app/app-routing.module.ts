@@ -3,6 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import {ListagemComponent} from "./usuario/listagem/listagem.component";
 import {ManutencaoComponent} from "./usuario/manutencao/manutencao.component";
 import {ListagemCadastroComponent} from "./usuario/listagem-cadastro/listagem-cadastro.component";
+import { AgendarPasseioComponent } from './usuario/agendar-passeio/agendar-passeio.component';
+import { ListagemPasseiosComponent } from './usuario/listagem-passeios/listagem-passeios.component';
 
 const routes: Routes = [
   {
@@ -20,6 +22,14 @@ const routes: Routes = [
   {
     path: 'listagem-cadastro-clientes',
     component: ListagemCadastroComponent
+  },
+  {
+    path: 'agendar-passeio',
+    component: AgendarPasseioComponent
+  },
+  {
+    path: 'passeios-agendados',
+    component: ListagemPasseiosComponent
   },
 
 ];

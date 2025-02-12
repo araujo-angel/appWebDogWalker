@@ -16,7 +16,7 @@ export class ListagemComponent {
   constructor(private clienteService: ClienteRestService, private roteador: Router) {
   }
 
-  gOnInit() {
+  ngOnInit() {
     this.clienteService.listar().subscribe(
         cliente => this.CLIENTES = cliente
     );

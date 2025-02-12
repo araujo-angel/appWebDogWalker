@@ -1,2 +1,11 @@
-<app-manutencao></app-manutencao>
-<router-outlet></router-outlet>
+<mat-toolbar class="navbar">
+    <span>DogWalker</span>
+  </mat-toolbar>
+  
+  <div class="app-container">
+    <app-menu></app-menu> <!-- Sidebar fixa -->
+    <div class="main-content">
+      <router-outlet></router-outlet> <!-- Conteúdo dinâmico -->
+    </div>
+  </div>
+  

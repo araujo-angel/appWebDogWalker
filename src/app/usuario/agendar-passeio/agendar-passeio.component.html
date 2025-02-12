@@ -1,0 +1,22 @@
+<mat-form-field>
+    <input matInput [(ngModel)]="passeio.nomeCliente" placeholder="Nome do Cliente">
+  </mat-form-field>
+  <br>
+  <mat-form-field>
+    <input matInput [(ngModel)]="passeio.telefone" placeholder="Telefone">
+  </mat-form-field>
+  <br>
+  <mat-form-field>
+    <input matInput [(ngModel)]="passeio.nomePet" placeholder="Nome do Pet">
+  </mat-form-field>
+  <br>
+  <mat-form-field>
+    <input matInput [(ngModel)]="passeio.dataHora" placeholder="Data e Hora" type="datetime-local">
+  </mat-form-field>
+  <br>
+  <mat-form-field>
+    <input matInput [(ngModel)]="passeio.idDogWalker" placeholder="ID do DogWalker">
+  </mat-form-field>
+  <br>
+  <button mat-raised-button (click)="agendarPasseio()">Agendar</button>
+  
