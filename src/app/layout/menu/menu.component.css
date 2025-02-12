@@ -1,0 +1,26 @@
+.container {
+    height: 100vh;
+  }
+  
+  .sidenav {
+    width: 250px; /* Define a largura do menu lateral */
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+  }
+  
+  .main-content {
+    margin-left: 250px; /* Garante que o conteúdo das rotas não fique sobreposto ao menu */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+  }
+  
+  .main-content > router-outlet {
+    width: 60%;
+    max-width: 800px;
+  }
+  

@@ -1,0 +1,25 @@
+<mat-form-field>
+    <input matInput [(ngModel)]="cliente.cpf" placeholder="CPF">
+</mat-form-field>
+<br>
+<mat-form-field>
+    <input matInput [(ngModel)]="cliente.nome" placeholder="Nome">
+</mat-form-field>
+<br>
+<mat-form-field>
+    <input matInput [(ngModel)]="cliente.email" placeholder="Email">
+</mat-form-field>
+<br>
+<mat-form-field>
+    <input matInput [(ngModel)]="cliente.telefone" placeholder="Email">
+</mat-form-field>
+<br>
+<mat-form-field>
+    <input matInput [(ngModel)]="cliente.endereco" placeholder="Endereco">
+</mat-form-field>
+<br>
+<mat-form-field>
+    <input matInput [(ngModel)]="cliente.email" placeholder="pets">
+</mat-form-field>
+<br>
+<button mat-raised-button (click)="cadastrarOuAtualizar()">{{nomeBotaoAcao}}</button>
