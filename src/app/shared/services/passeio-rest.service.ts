@@ -16,4 +16,8 @@ export class PasseioRestService {
   listar(): Observable<Passeio[]> {
     return this.http.get<Passeio[]>(this.URL_PASSEIOS);
   }
+
+  remover(id: string): Observable<any> {
+    return this.http.delete(`${this.URL_PASSEIOS}/${id}`);
+  }
 }

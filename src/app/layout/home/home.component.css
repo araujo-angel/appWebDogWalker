@@ -1,0 +1,67 @@
+/* Container centralizado */
+.home-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+/* Card principal com destaque */
+.home-card {
+  max-width: 600px;
+  width: 90%;
+  padding: 20px;
+  text-align: center;
+  background-color: #6d6a6d;
+  color: #ffffff;
+  border-radius: 8px; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); 
+}
+
+.home-card:hover {
+  transform: translateY(-5px); /* Leve movimento ao passar o mouse */
+}
+
+/* Ajuste de título e subtítulo */
+mat-card-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 15px; 
+}
+
+mat-card-subtitle {
+  font-size: 16px;
+  color: #bbb;
+  margin-bottom: 20px;
+}
+
+.contact-info {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 20px;
+  font-size: 16px;
+  margin-top: 20px;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+mat-icon {
+  font-size: 30px;
+  cursor: pointer;
+  color: #ffffff;
+}
+
+mat-icon:hover {
+  color: #67137e;
+}

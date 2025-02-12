@@ -1,25 +1,35 @@
-<mat-form-field>
-    <input matInput [(ngModel)]="cliente.cpf" placeholder="CPF">
-</mat-form-field>
-<br>
-<mat-form-field>
-    <input matInput [(ngModel)]="cliente.nome" placeholder="Nome">
-</mat-form-field>
-<br>
-<mat-form-field>
-    <input matInput [(ngModel)]="cliente.email" placeholder="Email">
-</mat-form-field>
-<br>
-<mat-form-field>
-    <input matInput [(ngModel)]="cliente.telefone" placeholder="Telefone">
-</mat-form-field>
-<br>
-<mat-form-field>
-    <input matInput [(ngModel)]="cliente.endereco" placeholder="Endereco">
-</mat-form-field>
-<br>
-<mat-form-field>
-    <input matInput [(ngModel)]="cliente.pets" placeholder="pets">
-</mat-form-field>
-<br>
-<button mat-raised-button (click)="cadastrarOuAtualizar()">{{nomeBotaoAcao}}</button>
+<mat-card class="form-card">
+    <mat-card-header>
+      <mat-card-title class="titulo">Cadastro de Cliente</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <form>
+        <mat-form-field>
+          <input matInput [(ngModel)]="cliente.cpf" name="cpf" placeholder="CPF" required>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+          <input matInput [(ngModel)]="cliente.nome" name="nome" placeholder="Nome" required>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+          <input matInput [(ngModel)]="cliente.email" name="email" placeholder="Email" required>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+          <input matInput [(ngModel)]="cliente.telefone" name="telefone" placeholder="Telefone" required>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+          <input matInput [(ngModel)]="cliente.endereco" name="endereco" placeholder="Endereço" required>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+          <input matInput [(ngModel)]="cliente.pets" name="pets" placeholder="Pets" required>
+        </mat-form-field>
+        <br>
+        <button mat-raised-button (click)="cadastrarOuAtualizar()">{{nomeBotaoAcao}}</button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+  

@@ -41,17 +41,15 @@ export class ManutencaoComponent {
 
   cadastrarOuAtualizar() {
     if (this.estahCadastrando) {
-      this.clienteService.cadastrar(this.cliente).subscribe(
-          clienteCadastrado => {
+      this.clienteService.cadastrar(this.cliente).subscribe(()=> {
+            this.cliente = new Cliente();
             this.mensagemService.sucesso('Cliente cadastrado com sucesso!');
-            this.roteador.navigate(['/listagem-clientes']);
           }
       );
     } else {
       this.clienteService.atualizar(this.cliente).subscribe(
           clienteAtualizado => {
             this.mensagemService.sucesso('Cliente atualizado com sucesso!');
-            this.roteador.navigate(['/listagem-clientes']);
           }
       );
     }

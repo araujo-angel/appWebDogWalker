@@ -6,15 +6,18 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { MatCardModule } from '@angular/material/card';
 import { MatListModule } from '@angular/material/list';
 import {MatMenuModule, MatMenuTrigger} from "@angular/material/menu";
 import {RouterLink} from "@angular/router";
-import { AgendarPasseioComponent } from '../usuario/agendar-passeio/agendar-passeio.component';
+import { HomeComponent } from './home/home.component';
+
 
 
 @NgModule({
   declarations: [
-    MenuComponent
+    MenuComponent,
+    HomeComponent
   ],
   exports: [
     MenuComponent
@@ -23,7 +26,8 @@ import { AgendarPasseioComponent } from '../usuario/agendar-passeio/agendar-pass
   imports: [
     CommonModule,
     MatToolbarModule, 
-    MatButtonModule,  
+    MatButtonModule,
+    MatCardModule,  
     MatSidenavModule,
     MatIconModule,
     MatListModule,

@@ -9,13 +9,13 @@
 mat-card-header {
     margin-bottom: 20px; /* Adiciona 20px de espaço abaixo do título */
   }
-
+  
   /* Estilo do título */
-  .titulo {
+  mat-card-title.titulo {
     color: white; 
     font-size: 20px; 
-    font-weight: bold;
-    text-align: center; 
+    font-weight: bold; 
+    text-align: center;
   }
 
   button {

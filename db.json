@@ -1,55 +1,18 @@
 {
   "clientes": [
-    {
-      "id": "fc32",
-      "cpf": "123",
-      "nome": "qwsdqc",
-      "email": "saws",
-      "telefone": "sw",
-      "endereco": "swq"
-    },
-    {
-      "id": "6d61",
-      "cpf": "12345",
-      "nome": "Angelica",
-      "email": "spock",
-      "telefone": "9999",
-      "endereco": "rua 15"
-    },
-    {
-      "id": "33ef",
-      "cpf": "1345",
-      "nome": "Aline",
-      "email": "alinenene",
-      "telefone": "34536",
-      "endereco": "Rua 23",
-      "pets": "luilu"
-    }
+
   ],
   "passeios": [
     {
-      "id": "c151",
-      "nomeCliente": "Ananda",
-      "telefone": "8756346",
-      "nomePet": "Spock",
-      "dataHora": "2023-12-12T12:12",
-      "idDogWalker": "567"
-    },
-    {
-      "id": "e213",
-      "nomeCliente": "Ananda",
-      "telefone": "8756346",
-      "nomePet": "Spock",
-      "dataHora": "2023-12-12T12:12",
-      "idDogWalker": "567"
-    },
-    {
-      "id": "3565",
-      "nomeCliente": "Alex",
-      "telefone": "87588768",
-      "nomePet": "spock",
-      "dataHora": "2025-12-12T12:12",
-      "idDogWalker": "77"
+      "id": "4338",
+      "nomeCliente": "Aline",
+      "telefone": "88888",
+      "nomePet": "Lulu",
+      "dataHora": "2025-08-24T10:00",
+      "idDogWalker": "34"
     }
+  ],
+  "walkers": [
+
   ]
 }

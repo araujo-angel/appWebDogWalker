@@ -13,5 +13,10 @@
 }
 
 mat-toolbar {
-  background-color: #1e1e1e !important;
+  background-color: #1e1e1e;
+}
+
+mat-nav-list a.mat-list-item {
+  color: #f4f4f4; 
+  text-decoration: none; 
 }

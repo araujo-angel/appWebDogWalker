@@ -1,10 +1,11 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ListagemComponent } from './listagem/listagem.component';
 import { ManutencaoComponent } from './manutencao/manutencao.component';
 import { ListagemCadastroComponent } from './listagem-cadastro/listagem-cadastro.component';
 
 import {FormsModule} from "@angular/forms";
+import { MatGridListModule } from '@angular/material/grid-list';
 import { MatTableModule } from '@angular/material/table';
 import {MatButton, MatButtonModule} from "@angular/material/button";
 import {MatFormField, MatFormFieldModule} from "@angular/material/form-field";
@@ -14,6 +15,7 @@ import {MatIconModule} from "@angular/material/icon";
 import {MatBadgeModule} from "@angular/material/badge";
 import { AgendarPasseioComponent } from './agendar-passeio/agendar-passeio.component';
 import { ListagemPasseiosComponent } from './listagem-passeios/listagem-passeios.component';
+import { CadastroWalkerComponent } from './cadastro-walker/cadastro-walker.component';
 
 
 @NgModule({
@@ -22,11 +24,13 @@ import { ListagemPasseiosComponent } from './listagem-passeios/listagem-passeios
     ManutencaoComponent,
     ListagemCadastroComponent,
     AgendarPasseioComponent,
-    ListagemPasseiosComponent
+    ListagemPasseiosComponent,
+    CadastroWalkerComponent
   ],
   imports: [
     CommonModule,
     FormsModule,
+    MatGridListModule,
     MatButtonModule,
     MatFormFieldModule,
     MatInputModule,
@@ -38,6 +42,7 @@ import { ListagemPasseiosComponent } from './listagem-passeios/listagem-passeios
   exports:[
     ListagemComponent,
     ManutencaoComponent
-  ]
+  ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class UsuarioModule { }

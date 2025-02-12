@@ -10,7 +10,7 @@ import { PasseioRestService } from '../../shared/services/passeio-rest.service';
 })
 export class ListagemPasseiosComponent implements OnInit {
   passeios: Passeio[] = [];
-  displayedColumns: string[] = ['nomeCliente', 'nomePet', 'dataHora', 'idDogWalker'];  // Defina as colunas
+  displayedColumns: string[] = ['id','nomeCliente', 'nomePet', 'dataHora', 'idDogWalker']; 
 
   constructor(private passeioService: PasseioRestService) {}
 
@@ -28,4 +28,19 @@ export class ListagemPasseiosComponent implements OnInit {
       }
     });
   }
+  removerPasseio(id: string | undefined) {
+  if (id) {
+    this.passeioService.remover(id).subscribe({
+      next: () => {
+        // Atualiza a lista após a remoção
+        this.listarPasseios();
+      },
+      error: (erro) => {
+        console.error('Erro ao remover passeio', erro);
+      }
+    });
+  } else {
+    console.error('ID não encontrado para remover o passeio.');
+  }
+}
 }

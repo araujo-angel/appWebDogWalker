@@ -1,0 +1,31 @@
+<mat-card class="form-card">
+    <mat-card-header>
+        <mat-card-title class="titulo">Cadastro do Walker</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <form>
+        <mat-form-field>
+          <input matInput [(ngModel)]="walker.nome" name="nome" placeholder="Nome" required>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+          <input matInput [(ngModel)]="walker.email" name="email" placeholder="Email" required>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+          <input matInput [(ngModel)]="walker.telefone" name="telefone" placeholder="Telefone" required>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+          <input matInput [(ngModel)]="walker.endereco" name="endereco" placeholder="Endereço" required>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+          <input matInput [(ngModel)]="walker.regiaoTranalho" name="regiaoTranalho" placeholder="Região de Trabalho" required>
+        </mat-form-field>
+        <br>
+        <button mat-raised-button (click)="cadastrar()">{{nomeBotaoAcao}}</button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+  
