@@ -8,7 +8,7 @@
         <mat-card-subtitle>{{ passeio.dataHora | date: 'dd/MM/yyyy HH:mm' }}</mat-card-subtitle>
       </mat-card-header>
       <mat-card-content>
-        <p>Agendamento para o pet <strong>{{ passeio.nomePet }}</strong> com o Walker .</p>
+        <p>Agendamento para o pet <strong>{{ passeio.nomePet }}</strong> com o Walker {{ passeio.idDogWalker }}</p>
         <p><strong>{{ passeio.nomeCliente }}</strong> agendou um passeio para o {{ passeio.dataHora | date: 'dd/MM/yyyy HH:mm' }}.</p>
       </mat-card-content>
     </mat-card>

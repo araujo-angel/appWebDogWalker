@@ -5,6 +5,7 @@ import { ClienteRestService } from '../../shared/services/cliente-rest.service';
 import {MensagemSnackService} from "../../shared/services/mensagem-snack.service";
 import {MensagemSweetService} from "../../shared/services/mensagem-sweet.service";
 import {ActivatedRoute, Router} from "@angular/router";
+import { ClienteFirestoreService } from '../../shared/services/cliente-firestore.service';
 
 
 
@@ -20,7 +21,7 @@ export class ManutencaoComponent {
   nomeBotaoAcao: string;
   estahCadastrando: boolean;
 
-  constructor(private clienteService: ClienteRestService, 
+  constructor(private clienteFirestotreService: ClienteFirestoreService, 
     private mensagemService: MensagemSweetService,
     private roteador: Router, 
     private rotaAtivada: ActivatedRoute) {
@@ -33,27 +34,29 @@ export class ManutencaoComponent {
     if (cpfEdicao) {
       this.nomeBotaoAcao = 'Atualizar';
       this.estahCadastrando = false;
-      this.clienteService.pesquisarPorCpf(cpfEdicao).subscribe(
-        clientePesquisado => this.cliente = clientePesquisado
+      this.clienteFirestotreService.pesquisarPorCpf(cpfEdicao).subscribe(
+        clientePesquisado => {
+          if (clientePesquisado) {
+            this.cliente = clientePesquisado;
+          } else {
+            this.mensagemService.erro('Cliente não encontrado!');
+          }
+        }
       );
     }
   }
 
   cadastrarOuAtualizar() {
     if (this.estahCadastrando) {
-      this.clienteService.cadastrar(this.cliente).subscribe(()=> {
+      this.clienteFirestotreService.cadastrar(this.cliente).then(() => {
             this.cliente = new Cliente();
-            this.mensagemService.sucesso('Cliente cadastrado com sucesso!');
-          }
+            this.mensagemService.sucesso('Cliente cadastrado com sucesso!');}
       );
     } else {
-      this.clienteService.atualizar(this.cliente).subscribe(
-          clienteAtualizado => {
-            this.mensagemService.sucesso('Cliente atualizado com sucesso!');
-          }
-      );
+      this.clienteFirestotreService.atualizar(this.cliente).then(() => {
+          this.mensagemService.sucesso('Cliente atualizado com sucesso!');
+      });
     }
   }
-
 }
 

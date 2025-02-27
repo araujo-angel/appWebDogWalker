@@ -1,18 +1,41 @@
 {
   "clientes": [
-
+    {
+      "id": "37c3",
+      "cpf": "000000",
+      "nome": "Alice",
+      "email": "alice@gmail.com",
+      "telefone": "899999",
+      "endereco": "Rua 14",
+      "pets": "Spock"
+    }
   ],
   "passeios": [
     {
-      "id": "4338",
-      "nomeCliente": "Aline",
-      "telefone": "88888",
-      "nomePet": "Lulu",
-      "dataHora": "2025-08-24T10:00",
+      "id": "1aae",
+      "nomeCliente": "angelica",
+      "telefone": "3454657",
+      "nomePet": "spock",
+      "dataHora": "2025-12-12T12:00",
       "idDogWalker": "34"
     }
   ],
   "walkers": [
-
+    {
+      "id": "536a",
+      "nome": "Junior",
+      "email": "junior@gmail.com",
+      "telefone": "876666",
+      "endereco": "Rua 23",
+      "regiaoTranalho": "Sul"
+    },
+    {
+      "id": "fbbd",
+      "nome": "Vitor",
+      "email": "vtor@gmail.com",
+      "telefone": "999999",
+      "endereco": "rua 15",
+      "regiaoTranalho": "norte"
+    }
   ]
 }
