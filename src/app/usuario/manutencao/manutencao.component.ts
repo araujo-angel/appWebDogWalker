@@ -5,7 +5,6 @@ import { ClienteRestService } from '../../shared/services/cliente-rest.service';
 import {MensagemSnackService} from "../../shared/services/mensagem-snack.service";
 import {MensagemSweetService} from "../../shared/services/mensagem-sweet.service";
 import {ActivatedRoute, Router} from "@angular/router";
-import { ClienteFirestoreService } from '../../shared/services/cliente-firestore.service';
 
 
 
@@ -21,7 +20,7 @@ export class ManutencaoComponent {
   nomeBotaoAcao: string;
   estahCadastrando: boolean;
 
-  constructor(private clienteFirestotreService: ClienteFirestoreService, 
+  constructor(private clienteService: ClienteRestService, 
     private mensagemService: MensagemSweetService,
     private roteador: Router, 
     private rotaAtivada: ActivatedRoute) {
@@ -34,29 +33,26 @@ export class ManutencaoComponent {
     if (cpfEdicao) {
       this.nomeBotaoAcao = 'Atualizar';
       this.estahCadastrando = false;
-      this.clienteFirestotreService.pesquisarPorCpf(cpfEdicao).subscribe(
-        clientePesquisado => {
-          if (clientePesquisado) {
-            this.cliente = clientePesquisado;
-          } else {
-            this.mensagemService.erro('Cliente não encontrado!');
-          }
-        }
+      this.clienteService.pesquisarPorCpf(cpfEdicao).subscribe(
+        clientePesquisado => this.cliente = clientePesquisado
       );
     }
   }
 
   cadastrarOuAtualizar() {
     if (this.estahCadastrando) {
-      this.clienteFirestotreService.cadastrar(this.cliente).then(() => {
+      this.clienteService.cadastrar(this.cliente).subscribe(()=> {
             this.cliente = new Cliente();
-            this.mensagemService.sucesso('Cliente cadastrado com sucesso!');}
+            this.mensagemService.sucesso('Cliente cadastrado com sucesso!');
+          }
       );
     } else {
-      this.clienteFirestotreService.atualizar(this.cliente).then(() => {
-          this.mensagemService.sucesso('Cliente atualizado com sucesso!');
-      });
+      this.clienteService.atualizar(this.cliente).subscribe(
+          clienteAtualizado => {
+            this.mensagemService.sucesso('Cliente atualizado com sucesso!');
+          }
+      );
     }
   }
-}
 
+}

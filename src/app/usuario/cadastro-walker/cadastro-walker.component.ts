@@ -3,7 +3,6 @@ import { Walker } from '../../shared/modelo/walker';
 import { WalkerRestService } from '../../shared/services/walker.service';
 import { MensagemSweetService } from "../../shared/services/mensagem-sweet.service";
 import { Router } from "@angular/router";
-import { WalkerFirestoreService } from '../../shared/services/walker-firestore.service';
 
 @Component({
   selector: 'app-cadastro-walker',
@@ -17,7 +16,7 @@ export class CadastroWalkerComponent {
   estahCadastrando: boolean;
 
   constructor(
-    private walkerFirestotreService: WalkerFirestoreService,
+    private walkerService: WalkerRestService,
     private mensagemService: MensagemSweetService,
     private roteador: Router
   ) {
@@ -28,7 +27,7 @@ export class CadastroWalkerComponent {
   }
 
   cadastrar() {
-    this.walkerFirestotreService.cadastrar(this.walker).subscribe(() => {
+    this.walkerService.cadastrar(this.walker).subscribe(() => {
         this.walker = new Walker();
         this.mensagemService.sucesso('Walker cadastrado com sucesso!');
         this.roteador.navigate(['/listagem-walkers']); // Navega para a listagem de walkers

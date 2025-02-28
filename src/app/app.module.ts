@@ -19,8 +19,6 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatButtonModule } from '@angular/material/button';
 import { MatListModule } from '@angular/material/list';
 
-import { FirestoreModule } from './firestore/firestore.module';
-import { firebaseConfig } from '../firebase.config';
 
 
 @NgModule({
@@ -41,7 +39,6 @@ import { firebaseConfig } from '../firebase.config';
     MatSidenavModule,
     MatButtonModule,
     MatListModule,
-    FirestoreModule
 ],
   providers: [
     provideClientHydration(),
