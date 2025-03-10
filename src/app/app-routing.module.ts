@@ -7,6 +7,7 @@ import { AgendarPasseioComponent } from './usuario/agendar-passeio/agendar-passe
 import { ListagemPasseiosComponent } from './usuario/listagem-passeios/listagem-passeios.component';
 import { HomeComponent } from './layout/home/home.component';
 import { CadastroWalkerComponent } from './usuario/cadastro-walker/cadastro-walker.component';
+import { FeedbacksComponent } from './usuario/feedbacks/feedbacks.component';
 
 const routes: Routes = [
   {
@@ -39,6 +40,10 @@ const routes: Routes = [
   },
   {
     path: 'cadastro-walker',
+    component: CadastroWalkerComponent
+  },
+  {
+    path: 'feedback',
     component: CadastroWalkerComponent
   },
   {

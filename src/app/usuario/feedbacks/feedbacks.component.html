@@ -1,0 +1,40 @@
+<mat-card class="feedback-card">
+    <mat-card-title>Deixe seu Feedback</mat-card-title>
+    <mat-card-content>
+      <form #feedbackForm="ngForm">
+        <!-- E-mail do Cliente -->
+        <mat-form-field class="full-width">
+          <mat-label>Email</mat-label>
+          <input matInput type="email" name="clienteEmail" [(ngModel)]="feedback.clienteEmail" required />
+        </mat-form-field>
+  
+        <!-- Comentário -->
+        <mat-form-field class="full-width">
+          <mat-label>Comentário</mat-label>
+          <textarea matInput name="comentario" [(ngModel)]="feedback.comentario" rows="3" required></textarea>
+        </mat-form-field>
+  
+        <!-- Nota -->
+        <mat-form-field class="full-width">
+          <mat-label>Nota</mat-label>
+          <mat-select name="nota" [(ngModel)]="feedback.nota" required>
+            <mat-option *ngFor="let n of [1, 2, 3, 4, 5]" [value]="n">{{ n }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+  
+        <!-- Data -->
+        <mat-form-field class="full-width">
+          <mat-label>Data</mat-label>
+          <input matInput [matDatepicker]="picker" name="data" [(ngModel)]="feedback.data" required />
+          <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+  
+        <!-- Botão de envio -->
+        <div class="button-container">
+          <button mat-raised-button color="primary" [disabled]="feedbackForm.invalid">Enviar</button>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+  

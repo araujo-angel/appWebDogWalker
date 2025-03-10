@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ListagemComponent } from './listagem/listagem.component';
 import { ManutencaoComponent } from './manutencao/manutencao.component';
 import { ListagemCadastroComponent } from './listagem-cadastro/listagem-cadastro.component';
+import { Feedback } from '../shared/modelo/feedback';
 
 import {FormsModule} from "@angular/forms";
 import { MatGridListModule } from '@angular/material/grid-list';
@@ -16,6 +17,7 @@ import {MatBadgeModule} from "@angular/material/badge";
 import { AgendarPasseioComponent } from './agendar-passeio/agendar-passeio.component';
 import { ListagemPasseiosComponent } from './listagem-passeios/listagem-passeios.component';
 import { CadastroWalkerComponent } from './cadastro-walker/cadastro-walker.component';
+import { FeedbacksComponent } from './feedbacks/feedbacks.component';
 
 
 @NgModule({
@@ -25,7 +27,8 @@ import { CadastroWalkerComponent } from './cadastro-walker/cadastro-walker.compo
     ListagemCadastroComponent,
     AgendarPasseioComponent,
     ListagemPasseiosComponent,
-    CadastroWalkerComponent
+    CadastroWalkerComponent,
+    FeedbacksComponent
   ],
   imports: [
     CommonModule,
@@ -41,7 +44,8 @@ import { CadastroWalkerComponent } from './cadastro-walker/cadastro-walker.compo
   ],
   exports:[
     ListagemComponent,
-    ManutencaoComponent
+    ManutencaoComponent,
+    FeedbacksComponent
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
