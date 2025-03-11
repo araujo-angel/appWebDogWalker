@@ -18,6 +18,10 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatButtonModule } from '@angular/material/button';
 import { MatListModule } from '@angular/material/list';
+import { FeedbackServiceIF } from './shared/services/feedback-serviceIF';
+import { FeedbacksFireService } from './shared/services/feedbacks-fire.service';
+import { MensagemIF } from './shared/modelo/MensagemIF';
+import { MensagemSweetService } from './shared/services/mensagem-sweet.service';
 
 
 @NgModule({
@@ -42,7 +46,7 @@ import { MatListModule } from '@angular/material/list';
   providers: [
     provideClientHydration(),
     provideAnimationsAsync(),
-    provideHttpClient(withFetch())
+    provideHttpClient(withFetch()),
   ],
   bootstrap: [AppComponent]
 })

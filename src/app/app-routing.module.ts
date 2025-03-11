@@ -43,14 +43,14 @@ const routes: Routes = [
     component: CadastroWalkerComponent
   },
   {
-    path: 'feedbacks',
-    component: FeedbacksComponent
-  },
-  {
     path: '',
     redirectTo: '/home', 
     pathMatch: 'full' 
-  }
+  },
+  {
+    path: 'feedback',
+    component: FeedbacksComponent
+  },
 
 ];
 
