@@ -43,8 +43,8 @@ const routes: Routes = [
     component: CadastroWalkerComponent
   },
   {
-    path: 'feedback',
-    component: CadastroWalkerComponent
+    path: 'feedbacks',
+    component: FeedbacksComponent
   },
   {
     path: '',

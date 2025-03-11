@@ -14,6 +14,8 @@ import {MatInput, MatInputModule} from "@angular/material/input";
 import {MatCardModule} from "@angular/material/card";
 import {MatIconModule} from "@angular/material/icon";
 import {MatBadgeModule} from "@angular/material/badge";
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 import { AgendarPasseioComponent } from './agendar-passeio/agendar-passeio.component';
 import { ListagemPasseiosComponent } from './listagem-passeios/listagem-passeios.component';
 import { CadastroWalkerComponent } from './cadastro-walker/cadastro-walker.component';
@@ -41,6 +43,9 @@ import { FeedbacksComponent } from './feedbacks/feedbacks.component';
     MatIconModule,
     MatTableModule,
     MatBadgeModule,
+    MatDatepickerModule,
+    MatNativeDateModule
+
   ],
   exports:[
     ListagemComponent,

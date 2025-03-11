@@ -5,6 +5,9 @@ import { FeedbacksFireService } from '../../shared/services/feedbacks-fire.servi
 import { FeedbackServiceIF } from '../../shared/services/feedback-serviceIF';
 import {ActivatedRoute, Router} from "@angular/router";
 import { MensagemSweetService } from "../../shared/services/mensagem-sweet.service";
+import { MensagemIF } from '../../shared/modelo/MensagemIF';
+import { Route } from '@angular/router';
+
 
 
 @Component({
@@ -18,20 +21,22 @@ export class FeedbacksComponent {
   feedback: Feedback;
   nomeBotaoAcao: string;
   estahCadastrando: boolean;
-  private mensagemService: MensagemSweetService;
 
-  constructor(private FeedbackService: FeedbackServiceIF,   private roteador: Router, private rotaAtivada: ActivatedRoute) {
+  constructor(private FeedbackService: FeedbackServiceIF,  private mensagemService: MensagemIF, private roteador: Router, private rotaAtivada: ActivatedRoute) {
     this.nomeBotaoAcao = 'Cadastrar';
     this.estahCadastrando = true;
     this.feedback = new Feedback();
 
   }
 
+  onDateChange(event: any) {
+    this.feedback.data = event.value.toISOString();
+  }
+
   cadastrar() {
       this.FeedbackService.cadastrar(this.feedback).subscribe(() => {
           this.feedback = new Feedback();
-          this.mensagemService.sucesso('Feedback cadastrado com sucesso!');
-          this.roteador.navigate(['/listagem-feedbacks']); 
+          this.mensagemService.sucesso('Feedback cadastrado com sucesso!');; 
         }
       );
     }
