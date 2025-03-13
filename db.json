@@ -1,7 +1,5 @@
 {
-  "clientes": [
-
-  ],
+  "clientes": [],
   "passeios": [
     {
       "id": "4338",
@@ -13,6 +11,13 @@
     }
   ],
   "walkers": [
-
+    {
+      "id": "5575",
+      "nome": "Melissa",
+      "email": "meli@gmail.com",
+      "telefone": "0000000",
+      "endereco": "rua 15",
+      "regiaoTranalho": "norte"
+    }
   ]
 }

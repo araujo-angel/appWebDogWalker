@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ListagemComponent } from './listagem/listagem.component';
 import { ManutencaoComponent } from './manutencao/manutencao.component';
 import { ListagemCadastroComponent } from './listagem-cadastro/listagem-cadastro.component';
+import { Feedback } from '../shared/modelo/feedback';
 
 import {FormsModule} from "@angular/forms";
 import { MatGridListModule } from '@angular/material/grid-list';
@@ -13,9 +14,14 @@ import {MatInput, MatInputModule} from "@angular/material/input";
 import {MatCardModule} from "@angular/material/card";
 import {MatIconModule} from "@angular/material/icon";
 import {MatBadgeModule} from "@angular/material/badge";
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 import { AgendarPasseioComponent } from './agendar-passeio/agendar-passeio.component';
 import { ListagemPasseiosComponent } from './listagem-passeios/listagem-passeios.component';
 import { CadastroWalkerComponent } from './cadastro-walker/cadastro-walker.component';
+import { FeedbacksComponent } from './feedbacks/feedbacks.component';
+import {AngularFirestoreModule} from "@angular/fire/compat/firestore";
+import {FirestoreModule} from "../firestore/firestore.module";
 
 
 @NgModule({
@@ -25,7 +31,8 @@ import { CadastroWalkerComponent } from './cadastro-walker/cadastro-walker.compo
     ListagemCadastroComponent,
     AgendarPasseioComponent,
     ListagemPasseiosComponent,
-    CadastroWalkerComponent
+    CadastroWalkerComponent,
+    FeedbacksComponent
   ],
   imports: [
     CommonModule,
@@ -38,10 +45,14 @@ import { CadastroWalkerComponent } from './cadastro-walker/cadastro-walker.compo
     MatIconModule,
     MatTableModule,
     MatBadgeModule,
+    MatDatepickerModule,
+    MatNativeDateModule
+
   ],
   exports:[
     ListagemComponent,
-    ManutencaoComponent
+    ManutencaoComponent,
+    FeedbacksComponent
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

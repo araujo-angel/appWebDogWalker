@@ -5,9 +5,10 @@ import { Router } from '@angular/router';
 import { MensagemSweetService } from '../../shared/services/mensagem-sweet.service';
 
 @Component({
-  selector: 'app-agendar-passeio',
-  templateUrl: './agendar-passeio.component.html',
-  styleUrl: './agendar-passeio.component.css'
+    selector: 'app-agendar-passeio',
+    templateUrl: './agendar-passeio.component.html',
+    styleUrl: './agendar-passeio.component.css',
+    standalone: false
 })
 export class AgendarPasseioComponent {
   passeio: Passeio;
