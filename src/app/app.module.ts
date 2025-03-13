@@ -47,6 +47,10 @@ import { MensagemSweetService } from './shared/services/mensagem-sweet.service';
     provideClientHydration(),
     provideAnimationsAsync(),
     provideHttpClient(withFetch()),
+    {
+    provide: FeedbackServiceIF,
+    useClass: FeedbacksFireService
+    }
   ],
   bootstrap: [AppComponent]
 })
