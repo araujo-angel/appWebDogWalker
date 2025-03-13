@@ -4,9 +4,10 @@ import { PasseioRestService } from '../../shared/services/passeio-rest.service';
 
 
 @Component({
-  selector: 'app-listagem-passeios',
-  templateUrl: './listagem-passeios.component.html',
-  styleUrls: ['./listagem-passeios.component.css']
+    selector: 'app-listagem-passeios',
+    templateUrl: './listagem-passeios.component.html',
+    styleUrls: ['./listagem-passeios.component.css'],
+    standalone: false
 })
 export class ListagemPasseiosComponent implements OnInit {
   passeios: Passeio[] = [];

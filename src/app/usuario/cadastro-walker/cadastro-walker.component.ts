@@ -5,9 +5,10 @@ import { MensagemSweetService } from "../../shared/services/mensagem-sweet.servi
 import { Router } from "@angular/router";
 
 @Component({
-  selector: 'app-cadastro-walker',
-  templateUrl: './cadastro-walker.component.html',
-  styleUrls: ['./cadastro-walker.component.css']
+    selector: 'app-cadastro-walker',
+    templateUrl: './cadastro-walker.component.html',
+    styleUrls: ['./cadastro-walker.component.css'],
+    standalone: false
 })
 export class CadastroWalkerComponent {
 
