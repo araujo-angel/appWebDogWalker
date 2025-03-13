@@ -1,41 +1,35 @@
-<mat-card class="feedback-card">
-  <mat-card-title>Deixe seu Feedback</mat-card-title>
+<mat-card class="form-card">
+  <mat-card-header>
+    <mat-card-title class="titulo">Feedback</mat-card-title>
+  </mat-card-header>
   <mat-card-content>
-    <form #feedbackForm="ngForm">
-      <!-- E-mail do Cliente -->
-      <mat-form-field class="full-width">
-        <mat-label>Email</mat-label>
-        <input matInput type="email" name="clienteEmail" [(ngModel)]="feedback.clienteEmail" required />
+    <form (ngSubmit)="cadastrar()">
+      <!-- Email do Cliente -->
+      <mat-form-field>
+        <input matInput [(ngModel)]="feedback.clienteEmail" name="clienteEmail" placeholder="Email do Cliente" required email>
       </mat-form-field>
+      <br>
 
       <!-- Comentário -->
-      <mat-form-field class="full-width">
-        <mat-label>Comentário</mat-label>
-        <textarea matInput name="comentario" [(ngModel)]="feedback.comentario" rows="3" required></textarea>
+      <mat-form-field>
+        <textarea matInput [(ngModel)]="feedback.comentario" name="comentario" placeholder="Comentário" required rows="4"></textarea>
       </mat-form-field>
+      <br>
 
-      <!-- Nota (convertendo para string) -->
-      <mat-form-field class="full-width">
-        <mat-label>Nota</mat-label>
-        <mat-select name="nota" [(ngModel)]="feedback.nota" required>
-          <mat-option *ngFor="let n of [1, 2, 3, 4, 5]" [value]="n.toString()">{{ n }}</mat-option>
-        </mat-select>
+      <!-- Nota -->
+      <mat-form-field>
+        <input matInput [(ngModel)]="feedback.nota" name="nota" placeholder="Nota (1 a 5)" required type="text">
       </mat-form-field>
+      <br>
 
-      <!-- Data (convertendo para string) -->
-      <mat-form-field class="full-width">
-        <mat-label>Data</mat-label>
-        <input matInput [matDatepicker]="picker" name="data" (dateChange)="onDateChange($event)" required />
-        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-        <mat-datepicker #picker></mat-datepicker>
+      <!-- Data -->
+      <mat-form-field>
+        <input matInput [(ngModel)]="feedback.data" name="data" placeholder="Data" required type="date">
       </mat-form-field>
+      <br>
 
-      <!-- Botão de envio -->
-      <div class="button-container">
-        <button mat-raised-button color="primary" [disabled]="feedbackForm.invalid" (click)="cadastrar()">
-          Enviar
-        </button>
-      </div>
+      <!-- Botão de Envio -->
+      <button mat-raised-button color="primary" type="submit">Enviar Feedback</button>
     </form>
   </mat-card-content>
 </mat-card>

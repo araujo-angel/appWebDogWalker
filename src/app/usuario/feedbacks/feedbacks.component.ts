@@ -34,9 +34,9 @@ export class FeedbacksComponent {
   }
 
   cadastrar() {
-    // Assegurando que o campo 'nota' não seja undefined
+
     if (this.feedback.nota === undefined) {
-      this.feedback.nota = ''; // Defina um valor padrão caso necessário
+      this.feedback.nota = ''; 
     }
 
     this.feedbackService.cadastrar(this.feedback).subscribe(() => {
