@@ -8,7 +8,8 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 
 import { LayoutModule } from "./layout/layout.module";
 import {UsuarioModule} from "./usuario/usuario.module";
-import {provideHttpClient, withFetch} from "@angular/common/http";
+import {FirestoreModule} from "./firestore/firestore.module";
+import {HTTP_INTERCEPTORS, provideHttpClient, withInterceptors, withInterceptorsFromDi} from "@angular/common/http";
 
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
@@ -22,6 +23,7 @@ import { FeedbackServiceIF } from './shared/services/feedback-serviceIF';
 import { FeedbacksFireService } from './shared/services/feedbacks-fire.service';
 import { MensagemIF } from './shared/modelo/MensagemIF';
 import { MensagemSweetService } from './shared/services/mensagem-sweet.service';
+import { ErroInterceptor } from './interceptor/erro-interceptor';
 
 
 @NgModule({
@@ -42,15 +44,25 @@ import { MensagemSweetService } from './shared/services/mensagem-sweet.service';
     MatSidenavModule,
     MatButtonModule,
     MatListModule,
+    FirestoreModule,
 ],
   providers: [
     provideClientHydration(),
     provideAnimationsAsync(),
-    provideHttpClient(withFetch()),
+    provideHttpClient(withInterceptorsFromDi()),
+    {
+        provide: HTTP_INTERCEPTORS,
+        useClass: ErroInterceptor,
+        multi: true
+    },
     {
     provide: FeedbackServiceIF,
     useClass: FeedbacksFireService
-    }
+    },
+    {
+      provide: MensagemIF,
+      useClass: MensagemSweetService
+  }
   ],
   bootstrap: [AppComponent]
 })

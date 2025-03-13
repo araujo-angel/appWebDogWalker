@@ -20,6 +20,8 @@ import { AgendarPasseioComponent } from './agendar-passeio/agendar-passeio.compo
 import { ListagemPasseiosComponent } from './listagem-passeios/listagem-passeios.component';
 import { CadastroWalkerComponent } from './cadastro-walker/cadastro-walker.component';
 import { FeedbacksComponent } from './feedbacks/feedbacks.component';
+import {AngularFirestoreModule} from "@angular/fire/compat/firestore";
+import {FirestoreModule} from "../firestore/firestore.module";
 
 
 @NgModule({

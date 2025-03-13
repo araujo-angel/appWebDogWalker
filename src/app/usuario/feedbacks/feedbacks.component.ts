@@ -22,7 +22,7 @@ export class FeedbacksComponent {
   nomeBotaoAcao: string;
   estahCadastrando: boolean;
 
-  constructor(private FeedbackService: FeedbackServiceIF,  private mensagemService: MensagemIF, private roteador: Router, private rotaAtivada: ActivatedRoute) {
+  constructor(private feedbackService: FeedbackServiceIF,  private mensagemService: MensagemIF, private roteador: Router, private rotaAtivada: ActivatedRoute) {
     this.nomeBotaoAcao = 'Cadastrar';
     this.estahCadastrando = true;
     this.feedback = new Feedback();
@@ -34,10 +34,14 @@ export class FeedbacksComponent {
   }
 
   cadastrar() {
-      this.FeedbackService.cadastrar(this.feedback).subscribe(() => {
-          this.feedback = new Feedback();
-          this.mensagemService.sucesso('Feedback cadastrado com sucesso!');; 
-        }
-      );
+    // Assegurando que o campo 'nota' não seja undefined
+    if (this.feedback.nota === undefined) {
+      this.feedback.nota = ''; // Defina um valor padrão caso necessário
     }
+
+    this.feedbackService.cadastrar(this.feedback).subscribe(() => {
+        this.feedback = new Feedback();
+        this.mensagemService.sucesso('Feedback cadastrado com sucesso!');
+    });
+  }
 }
