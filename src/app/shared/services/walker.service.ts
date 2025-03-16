@@ -1,14 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Walker } from '../modelo/walker';  // Assumindo que você tem um modelo de Walker
+import { Walker } from '../modelo/walker'; 
 
 @Injectable({
   providedIn: 'root'
 })
 export class WalkerRestService {
 
-  private URL_WALKERS = 'http://localhost:3000/walkers';  // URL do servidor para walkers
+  private URL_WALKERS = 'http://localhost:3000/walkers';
 
   constructor(private http: HttpClient) { }
 

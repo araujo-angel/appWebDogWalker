@@ -4,7 +4,7 @@ export class Walker {
         public email?: string,
         public telefone?: string,
         public endereco?: string,
-        public regiaoTranalho?: string,
-        public ativo: boolean | undefined = undefined
+        public regiaoTrabalho?: string,
+        public ativo: boolean = true
     ) {}
 }

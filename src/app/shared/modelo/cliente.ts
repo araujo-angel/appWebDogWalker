@@ -6,6 +6,6 @@ export class Cliente {
         public telefone?: string,
         public endereco?: string,
         public pets?: string[],
-        public ativo: boolean | undefined = undefined
+        public ativo: boolean = true
     ) {}
 }

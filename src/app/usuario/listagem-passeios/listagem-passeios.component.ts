@@ -11,7 +11,7 @@ import { PasseioRestService } from '../../shared/services/passeio-rest.service';
 })
 export class ListagemPasseiosComponent implements OnInit {
   passeios: Passeio[] = [];
-  displayedColumns: string[] = ['id','nomeCliente', 'nomePet', 'dataHora', 'idDogWalker']; 
+  displayedColumns: string[] = ['id','idCliente', 'nomePet', 'dataHora', 'idDogWalker']; 
 
   constructor(private passeioService: PasseioRestService) {}
 
