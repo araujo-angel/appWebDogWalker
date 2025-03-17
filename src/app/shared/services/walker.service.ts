@@ -2,13 +2,14 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Walker } from '../modelo/walker'; 
+import { environment } from '../../../environments/environment.development';
 
 @Injectable({
   providedIn: 'root'
 })
 export class WalkerRestService {
 
-  private URL_WALKERS = 'http://localhost:3000/walkers';
+  private URL_WALKERS = environment.URL_WALKERS;
 
   constructor(private http: HttpClient) { }
 

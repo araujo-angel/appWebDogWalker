@@ -1,15 +1,6 @@
 {
   "clientes": [],
-  "passeios": [
-    {
-      "id": "4338",
-      "nomeCliente": "Aline",
-      "telefone": "88888",
-      "nomePet": "Lulu",
-      "dataHora": "2025-08-24T10:00",
-      "idDogWalker": "34"
-    }
-  ],
+  "passeios": [],
   "walkers": [
     {
       "id": "5575",

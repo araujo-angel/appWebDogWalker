@@ -2,10 +2,11 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import { Cliente } from '../modelo/cliente';
+import { environment } from '../../../environments/environment.development';
 
 @Injectable({  providedIn: 'root'})
 export class ClienteRestService {
-  private URL_CLIENTES = 'http://localhost:3000/clientes';
+  private URL_CLIENTES = environment.URL_CLIENTES;
   constructor(private http: HttpClient) { }
 
   cadastrar(cliente: Cliente): Observable<Cliente> {    

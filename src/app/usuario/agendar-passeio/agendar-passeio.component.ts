@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { Passeio } from '../../shared/modelo/passeio';
 import { PasseioRestService } from '../../shared/services/passeio-rest.service';
-import { Router } from '@angular/router';
-import { MensagemSweetService } from '../../shared/services/mensagem-sweet.service';
+import { ActivatedRoute, Router } from '@angular/router';
+import {MensagemIF} from "../../shared/modelo/MensagemIF";
 
 @Component({
     selector: 'app-agendar-passeio',
@@ -12,20 +12,46 @@ import { MensagemSweetService } from '../../shared/services/mensagem-sweet.servi
 })
 export class AgendarPasseioComponent {
   passeio: Passeio;
+  nomeBotaoAcao: string;
+  estahAgendando: boolean;
 
   constructor(
     private passeioService: PasseioRestService,
-    private mensagemService: MensagemSweetService,
-    private roteador: Router
+    private mensagemService: MensagemIF,
+    private roteador: Router,
+    private rotaAtivada: ActivatedRoute
   ) {
     this.passeio = new Passeio();
-  }
+    this.nomeBotaoAcao = 'agendar';
+    this.estahAgendando = true;
 
-  agendarPasseio() {
-    this.passeioService.agendar(this.passeio).subscribe(() => {
-      this.passeio = new Passeio();
-      this.mensagemService.sucesso('Passeio agendado com sucesso!');
-      this.roteador.navigate(['/passeios-agendados']);
-    });
+    const idEdicao = this.rotaAtivada.snapshot.params['id'];
+    if (idEdicao) {
+      this.nomeBotaoAcao = 'Atualizar';
+      this.estahAgendando = false;
+      this.passeioService.pesquisarPorId(idEdicao).subscribe(
+        passeioPesquisado => this.passeio = passeioPesquisado
+      );
+    }
+
+  }
+  agendarOuAtualizarPasseio() {
+    if (this.estahAgendando) {
+      this.passeioService.agendar(this.passeio).subscribe(
+        passeioAgendado => {
+          this.passeio = new Passeio();
+          this.mensagemService.sucesso('Passeio agendado com sucesso!');
+          this.roteador.navigate(['/passeios-agendados']);
+        }
+      );
+    } else {
+      this.passeioService.atualizar(this.passeio).subscribe(
+        passeioAtualizado => {
+          this.passeio = new Passeio();
+          this.mensagemService.sucesso('Passeio atualizado com sucesso!');
+          this.roteador.navigate(['/passeios-agendados']);
+        }
+      );
+    }
   }
 }

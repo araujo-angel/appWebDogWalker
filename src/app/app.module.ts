@@ -24,6 +24,10 @@ import { FeedbacksFireService } from './shared/services/feedbacks-fire.service';
 import { MensagemIF } from './shared/modelo/MensagemIF';
 import { MensagemSweetService } from './shared/services/mensagem-sweet.service';
 import { ErroInterceptor } from './interceptor/erro-interceptor';
+import { PasseioServiceIF } from './shared/services/passeio-serviceIF';
+import { PasseioRestService } from './shared/services/passeio-rest.service';
+import { WalkerRestService } from './shared/services/walker.service';
+import { ClienteRestService } from './shared/services/cliente-rest.service';
 
 
 @NgModule({
@@ -58,6 +62,18 @@ import { ErroInterceptor } from './interceptor/erro-interceptor';
     {
     provide: FeedbackServiceIF,
     useClass: FeedbacksFireService
+    },
+    {
+      provide: PasseioServiceIF,
+      useClass: PasseioRestService
+    },
+    {
+      provide: WalkerRestService,
+      useClass: WalkerRestService
+    },
+    {
+      provide: ClienteRestService,
+      useClass: ClienteRestService
     },
     {
       provide: MensagemIF,
