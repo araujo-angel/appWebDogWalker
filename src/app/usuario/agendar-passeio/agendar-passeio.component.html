@@ -1,30 +1,51 @@
 <mat-card class="form-card">
-  <mat-card-header>
+  <mat-card-header class="header">
     <mat-card-title class="titulo">Agendamento de Passeio</mat-card-title>
   </mat-card-header>
   <mat-card-content>
-    <form>
-      <mat-form-field>
-        <input matInput [(ngModel)]="passeio.idCliente" name="nomeCliente" placeholder="Nome do Cliente" required>
+    <form #passeioForm="ngForm">
+      <!-- Cliente -->
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Cliente:</mat-label>
+        <mat-select [(ngModel)]="passeio.cliente" name="idCliente" required>
+          <mat-option *ngFor="let cliente of clientes" [value]="cliente">
+            {{ cliente.nome }}
+          </mat-option>
+        </mat-select>
       </mat-form-field>
-      <br>
-      <mat-form-field>
+
+      <!-- Telefone -->
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Telefone</mat-label>
         <input matInput [(ngModel)]="passeio.telefone" name="telefone" placeholder="Telefone" required>
       </mat-form-field>
-      <br>
-      <mat-form-field>
+
+      <!-- Nome do Pet -->
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Nome do Pet</mat-label>
         <input matInput [(ngModel)]="passeio.nomePet" name="nomePet" placeholder="Nome do Pet" required>
       </mat-form-field>
-      <br>
-      <mat-form-field>
-        <input matInput [(ngModel)]="passeio.dataHora" name="dataHora" placeholder="Data e Hora" type="datetime-local" required>
+
+      <!-- Data e Hora -->
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Data e Hora</mat-label>
+        <input matInput [(ngModel)]="passeio.dataHora" name="dataHora" type="datetime-local" required>
       </mat-form-field>
-      <br>
-      <mat-form-field>
-        <input matInput [(ngModel)]="passeio.idDogWalker" name="idDogWalker" placeholder="ID do DogWalker" required>
+
+      <!-- DogWalker -->
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>DogWalker:</mat-label>
+        <mat-select [(ngModel)]="passeio.walker" name="nomeDogWalker" required>
+          <mat-option *ngFor="let walker of walkers" [value]="walker">
+            {{ walker.nome }}
+          </mat-option>
+        </mat-select>
       </mat-form-field>
-      <br>
-      <button mat-raised-button (click)="agendarOuAtualizarPasseio()">Agendar</button>
+
+      <!-- Botão de Agendamento -->
+      <button mat-raised-button color="primary" (click)="agendarOuAtualizarPasseio()" [disabled]="passeioForm.invalid">
+        {{ nomeBotaoAcao }}
+      </button>
     </form>
   </mat-card-content>
 </mat-card>

@@ -1,26 +1,35 @@
 /* Estilo do card */
 .form-card {
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  }
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
 
+/* Ajuste no cabeçalho */
 mat-card-header {
-    margin-bottom: 20px; /* Adiciona 20px de espaço abaixo do título */
-  }
+  margin-bottom: 20px;
+  padding: 10px;
+  border-radius: 10px 10px 0 0;
+  color: white;
+}
 
-  /* Estilo do título */
-  .titulo {
-    color: white; 
-    font-size: 20px; 
-    font-weight: bold;
-    text-align: center; 
-  }
+/* Estilo do título */
+.titulo {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+}
 
-  button {
-    display: block;
-    margin: 20px auto; 
-    width: auto;
-  }
-  
+/* Ajusta os campos de entrada */
+.full-width {
+  width: 100%;
+}
+
+/* Centraliza o botão */
+button {
+  display: block;
+  margin: 20px auto;
+  width: auto;
+}
