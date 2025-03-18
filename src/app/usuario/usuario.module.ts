@@ -6,6 +6,7 @@ import { ListagemCadastroComponent } from './listagem-cadastro/listagem-cadastro
 import { Feedback } from '../shared/modelo/feedback';
 
 import {FormsModule} from "@angular/forms";
+import { MatSelectModule } from '@angular/material/select';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatTableModule } from '@angular/material/table';
 import {MatButton, MatButtonModule} from "@angular/material/button";
@@ -37,6 +38,7 @@ import {FirestoreModule} from "../firestore/firestore.module";
   imports: [
     CommonModule,
     FormsModule,
+    MatSelectModule,
     MatGridListModule,
     MatButtonModule,
     MatFormFieldModule,

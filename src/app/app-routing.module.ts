@@ -51,7 +51,10 @@ const routes: Routes = [
     path: 'feedback',
     component: FeedbacksComponent
   },
-
+  {
+    path: 'edicao-passeio/:id',
+    component: AgendarPasseioComponent
+  },
 ];
 
 @NgModule({
