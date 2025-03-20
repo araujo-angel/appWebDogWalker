@@ -6,8 +6,9 @@ Este projeto é uma aplicação web desenvolvida com **Angular** para o frontend
 
 - **Frontend**: Angular (versão 17.3.11)
 - **Backend**: Spring Boot (versão compatível): [Aplicação Back-End](https://github.com/araujo-angel/backEndDogWalker.git)
-- **Banco de Dados Relacional**: [Modelo Relacional do projeto](https://github.com/araujo-angel/dogWalker.git)
-- **Banco de Dados NoSQL**: [Modelo NoSQL do projeto](https://github.com/araujo-angel/dogWalker.git)
+- **Banco de dados NoSQL**: Firebase (apenas no componente feedback) 
+- **Modelo de Dados Relacional**: [Modelo Relacional do projeto](https://github.com/araujo-angel/dogWalker.git)
+- **Modelo de Dados NoSQL**: [Modelo NoSQL do projeto](https://github.com/araujo-angel/dogWalker.git)
 
 ## Pré-Requisitos
 
